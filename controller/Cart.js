@@ -1,7 +1,6 @@
 const { Cart } = require('../model/Cart');
 
 exports.fetchCartByUser = async (req, res) => {
-  console.log(req)
   // const { id } = req.user;
   try {
     const cartItems = await Cart.find();

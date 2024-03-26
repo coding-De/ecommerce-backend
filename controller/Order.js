@@ -7,8 +7,9 @@ exports.fetchOrdersByUser = async (req, res) => {
     console.log(id)
     try {
       const orders = await Order.find({ user: id });
-  
-      res.status(200).json(orders);
+      setTimeout(() => {
+        res.status(200).json(orders);
+      }, 100);
     } catch (err) {
       res.status(400).json(err);
     }
@@ -70,7 +71,6 @@ exports.fetchOrdersByUser = async (req, res) => {
     }
   
     const totalDocs = await totalOrdersQuery.count().exec();
-    console.log({ totalDocs });
   
     if (req.query._page && req.query._limit) {
       const pageSize = req.query._limit;

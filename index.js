@@ -49,10 +49,10 @@ server.use('/products', productsRouter.router);
 // we can also use JWT token for client-only auth
 server.use('/categories', categoriesRouter.router);
 server.use('/brands', brandsRouter.router);
-server.use('/users', usersRouter.router);
-server.use('/auth', authRouter.router);
-server.use('/cart', cartRouter.router);
-server.use('/orders', ordersRouter.router);
+server.use('/user', usersRouter.router);
+server.use('/authen', authRouter.router);
+server.use('/carts', cartRouter.router);
+server.use('/order', ordersRouter.router);
 
 // this line we add to make react router work in case of other routes doesnt match
 server.get('*', (req, res) =>
